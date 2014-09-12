@@ -4,7 +4,7 @@
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">Hello Android!</string>
 
-    <string name="text_main">Hello Android! Click here (short or long)...</string>
+    <string name="text_main">Hello Android!\nClick here (short or long)...</string>
     <string name="text_toast">Here Scala :) That was a long click!</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package edu.luc.etl.cs313.scala.clickcounter
+package edu.luc.etl.cs313.scala.hello
 package ui
 
 import java.io.IOException
