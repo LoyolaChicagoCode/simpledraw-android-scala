@@ -19,5 +19,5 @@ trait AbstractFunctionalTest {
     assertNotNull(activity)
   }
 
-  // TODO test short and long click
+  // TODO test short and long click and resulting toasts
 }

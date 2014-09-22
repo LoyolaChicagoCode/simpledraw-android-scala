@@ -1,8 +1,3 @@
-# TODO
-
-- Android features: play notification, show toast
-- how to use logcat: adb devices, then adb logcat | grep hello 
-
 # Learning Objectives
 
 This example is intended as a starting point for anyone planning develop
@@ -12,16 +7,13 @@ Android applications using Scala. Its learning objectives are:
     - using the Simple Build Tool (sbt) for Scala in conjunction with 
       [pfn's well-maintained plugin](https://github.com/pfn/android-sdk-plugin)
     - using IntelliJ IDEA
-- Android application architecture for testability and maintainability
-    - [Dependency Inversion Principle (DIP)](http://en.wikipedia.org/wiki/Dependency_inversion_principle)
-    - [Model-View-Adapter](http://en.wikipedia.org/wiki/Model-view-adapter) architectural pattern
-    - Separation of Android activity into event-handling and lifecycle management
+- Basic Android features 
+    - [event-driven program execution](http://en.wikipedia.org/wiki/Event-driven_programming)
+    - handling input events
+    - distinguishing between regular and long click/touch events
+    - showing a notification message (toast)
+    - playing a notification sound
     - Use of Scala primarily as a "better Java" (including mutable state)
-- Effective testing
-    - Unit testing and [Behavior-Driven Development (BDD)](http://en.wikipedia.org/wiki/Behavior-driven_development) 
-      with ScalaTest
-    - [Mock objects](http://en.wikipedia.org/wiki/Mock_object) with [Mockito](http://mockito.googlecode.com/)
-    - Functional testing (out-of-container) using [Robolectric](http://pivotal.github.com/robolectric/)
 
 # Prerequisites
 
@@ -60,6 +52,18 @@ Android applications using Scala. Its learning objectives are:
 These instructions assume that `$ANDROID_HOME/tools` and 
 `$ANDROID_HOME/platform-tools` are in the `$PATH`.      
 
+## Specifying the location of the Android SDK
+
+You can either
+
+- set `$ANDROID_HOME` to the directory where you installed your 
+  Android SDK
+
+- create a file `local.properties` in your project root 
+  (or copy an existing one) with a single line
+  
+        sdk.dir=/location/of/android/sdk
+
 ## Starting the emulator
 
 To start the emulator:
@@ -87,17 +91,26 @@ If this is not the case, restart the adb server
 
 and check again.
 
-## Specifying the location of the Android SDK
+## Viewing the log
 
-You can either
+In Android, all log messages typically carry a tag. 
+In this example, the tag for the main activity is  
 
-- set `$ANDROID_HOME` to the directory where you installed your 
-  Android SDK
+    private def TAG = "hello-android-activity"
 
-- create a file `local.properties` in your project root 
-  (or copy an existing one) with a single line
-  
-        sdk.dir=/location/of/android/sdk
+You can then write tagged log messages like this:       
+    
+    Log.i(TAG, "onCreate")
+    
+You can view the complete log using this command:
+    
+    $ adb logcat
+    
+This quickly results in too much information. 
+To view only the messages pertaining, say, to a particular tag, 
+you can filter by that tag:
+     
+    $ adb logcat | grep hello
 
 ## Running the application
 
