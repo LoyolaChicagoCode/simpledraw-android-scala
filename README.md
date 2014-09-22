@@ -114,12 +114,14 @@ you can filter by that tag:
 
 ## Running the application
 
-Once your emulator is running or device connected, you can run the app:
+Once your emulator is running or device connected, you can install and
+run the app:
 
-    $ sbt android:run
+    $ sbt clean android:run
 
-The app should now start in the emulator and you should be able to interact
-with it.
+The app should now start in the emulator and you should be able to
+interact with it. (Cleaning before running ensures that the app gets
+installed properly on the emulator.)
 
 ## Running the tests
 
