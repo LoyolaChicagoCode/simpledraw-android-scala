@@ -2,17 +2,17 @@ package edu.luc.etl.cs313.scala.simpledraw
 package ui
 
 import android.util.AttributeSet
-import android.view.View
+import android.view.{WindowManager, View}
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
+import android.graphics.{Point, Canvas, Color, Paint}
 
 /**
  * A custom widget for drawing some lines.
  */
 class DrawWidget(context: Context) extends View(context) {
 
+  // this class will not work at runtime
+  // unless all required constructors are implemented
 
   def this(context: Context, attrs: AttributeSet, defStyle: Int) { this(context) }
 
@@ -20,7 +20,15 @@ class DrawWidget(context: Context) extends View(context) {
 
   private def TAG = "simpledraw-android-activity"
 
-  private val SIZE = 400
+  private val SIZE = {
+    // obtain screen size programmatically, see also
+    // http://stackoverflow.com/questions/1016896/how-to-get-screen-dimensions
+    val display = context.getSystemService(Context.WINDOW_SERVICE)
+      .asInstanceOf[WindowManager].getDefaultDisplay()
+    val size = new Point
+    display.getSize(size)
+    math.min(size.x, size.y)
+  }
 
   override protected def onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int): Unit = {
     setMeasuredDimension(SIZE , SIZE)
