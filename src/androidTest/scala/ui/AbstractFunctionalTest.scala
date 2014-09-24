@@ -1,4 +1,4 @@
-package edu.luc.etl.cs313.scala.hello
+package edu.luc.etl.cs313.scala.simpledraw
 package ui
 
 import org.junit.Assert._

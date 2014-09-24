@@ -1,5 +1,4 @@
-package edu.luc.etl.cs313.scala.hello
-package ui
+package edu.luc.etl.cs313.scala.simpledraw.ui
 
 import org.junit.runner.RunWith
 import org.robolectric.{Robolectric, RobolectricTestRunner}

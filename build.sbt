@@ -8,7 +8,7 @@ import android.Keys._
 
 android.Plugin.androidBuild
 
-name := "hello-android-scala"
+name := "simpledraw-android-scala"
 
 version := "0.0.1"
 
@@ -40,6 +40,8 @@ proguardOptions in Android ++= Seq(
 
 // Required so Proguard won't remove the actual instrumentation tests.
 proguardOptions in Android ++= Seq(
+  "-keep class * extends android.view.View",
+  "-keepclassmembers class edu.luc.etl.cs313.scala.simpledraw.ui.DrawWidget { *; }",
   "-keep public class * extends junit.framework.TestCase",
   "-keepclassmembers class * extends junit.framework.TestCase { *; }"
 )
