@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/lucoodevcourse/simpledraw-android-scala.svg?branch=master)](https://travis-ci.org/lucoodevcourse/simpledraw-android-scala) 
+[![Coverage Status](https://img.shields.io/coveralls/lucoodevcourse/simpledraw-android-scala.svg)](https://coveralls.io/r/lucoodevcourse/simpledraw-android-scala) 
+[![Download](https://api.bintray.com/packages/lucoodevcourse/generic/simpledraw-android-scala/images/download.svg) ](https://bintray.com/lucoodevcourse/generic/simpledraw-android-scala/_latestVersion)
+
 # Learning Objectives
 
 This example is intended as a starting point for Android apps involving 
